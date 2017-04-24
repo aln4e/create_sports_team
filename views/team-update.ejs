@@ -3,18 +3,25 @@
   </head>
   <body>
     <h1>Thanks for the input!</h1>
-
+<br>
     <% for(var i= responses.length-1 ; i < responses.length; i++){ %>
-
+<br>
     Your team name is: <%= responses[responses.length-1].teamName %>
-    <br />
+    <br>
     Your coach name is: <%= responses[responses.length-1].coach %>
-    <br />
+    <br>
       Your player is: <%= responses[responses.length-1].player %>
+      <br>
+      Your 2nd player is: <%= responses[responses.length-1].player1 %>
+      <br>
+      <p> ------------- </p>
     <% } %>
-
-    <a href="/playerSelection"> Pick your players</a>
+    <br>
+    <a href="/"> Pick different players</a>
     <br>
     <a href='/'> Create new team</a>
+    <br>
+    <a href="/league_info">View League Info</a>
+
   </body>
 </html>

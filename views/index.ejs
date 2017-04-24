@@ -2,6 +2,17 @@
   <head>
 
     <title>New Team</title>
+    <style>
+      body {
+        background-image: url(https://media.giphy.com/media/l0MYMj4ABaEXBiuty/giphy.gif);
+        background-repeat: no-repeat;
+        background-size: cover;
+        color: white;
+        text-shadow: 2px 2px black;
+      }
+
+
+    </style>
   </head>
   <body>
     <h1>Create Your Own Sports Team</h1>
@@ -21,16 +32,31 @@
         <input type="text" name="coach" placeholder="Enter Coach Name">
         </label>
         <br>
+        <br>
+      <label>
+        Franchise Player:
+        <input type='radio' name='player' value='Ronaldo' />
+        Ronaldo
 
-        <input type='checkbox' name='player' value='Ronaldo' />
-        Cristiano Ronaldo
-      <br>
-        <input type='checkbox' name='player' value='Messi' />
-        Lionel Messi
-      <br>
-        <input type='checkbox' name='player' value='Neymar' />
+        <input type='radio' name='player' value='Messi' />
+        Messi
+
+        <input type='radio' name='player' value='Neymar' />
         Neymar
+      </label>
+      <br>
+      <label>
+        Star Players:
+        <input type='radio' name='player1' value='Suarez' />
+        Suarez
 
+        <input type='radio' name='player1' value='Neuer' />
+        Neuer
+
+        <input type='radio' name='player1' value='Bale' />
+        Bale
+      </label>
+      <br>
       <input type='submit' value='Submit' />
     </form>
 
