@@ -1,0 +1,20 @@
+<html>
+  <head>
+  </head>
+  <body>
+    <h1>Thanks for the input!</h1>
+
+    <% for(var i= responses.length-1 ; i < responses.length; i++){ %>
+
+    Your team name is: <%= responses[responses.length-1].teamName %>
+    <br />
+    Your coach name is: <%= responses[responses.length-1].coach %>
+    <br />
+      Your player is: <%= responses[responses.length-1].player %>
+    <% } %>
+
+    <a href="/playerSelection"> Pick your players</a>
+    <br>
+    <a href='/'> Create new team</a>
+  </body>
+</html>
