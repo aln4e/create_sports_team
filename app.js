@@ -43,13 +43,14 @@ app.use(bodyParser.urlencoded({ extended: false }))
 //   })
 
 
+
+//sessions version:
 app.get('/', function (request, response) {
   //we read cookies from the request
   let pageViews = request.session.pageViews || 0;
   request.session.pageViews = pageViews + 1;
   response.render('index');
 });
-
 
 app.get('/clear-session',
 function(request, response){
