@@ -3,10 +3,10 @@ var expressLayouts = require('express-ejs-layouts');
 var bodyParser = require('body-parser');
 var fs = require('fs');
 let cookieParser = require('cookie-parser');
-let session = require('express-session');
+// let session = require('express-session');
 
 var app = express();
-app.use(session({ secret: 'antonio is sexy'}))
+// app.use(session({ secret: 'antonio is sexy'}))
 
 app.use(cookieParser());
 app.set('view engine', 'ejs');
@@ -15,24 +15,32 @@ app.use(express.static('public'));
 app.use(expressLayouts);
 app.use(bodyParser.urlencoded({ extended: false }))
 //var winston = require('winston');
+app.get('/',
+  function(request, response){
+    let pageVisits = parseInt(request.cookies.pageVisits) || 0
 
-//it renders index.ejs when the '/' is called
+    let secondsToExpire = 1200// 1 day
+    response.cookie('pageVisits', pageVisits + 1, { maxAge: secondsToExpire })
+
+     response.render('index');
+  })
+
+// // it renders index.ejs when the '/' is called
 // app.get('/', function (request, response) {
 //   //we read cookies from the request
 //   let pageVisits = parseInt(request.cookies.pageVisits) || 0;
 //   let secondsToExpire = 60 * 5; // 1 day
-//
-//   let raw = fs.readFileSync('cookies_data.json');
-// //teamUpdates returns .json file with its contents
-//   let data = JSON.parse(raw);
-// //adds new entries as a new object to the array in the .json file
-//
-//   //response.cookie('pageVisits', pageVisits + 1); // "Max-Age": secondsToExpire });
-//   let views = response.cookie('pageVisits', pageVisits + 1)
-//   data.push(views);
-// //this converts the .json file into string name/value pairs
-//   fs.writeFileSync('cookies_data.json', JSON.stringify(data));
-//
+// //
+// //   let raw = fs.readFileSync('cookies_data.json');
+// // //teamUpdates returns .json file with its contents
+// //   let data = JSON.parse(raw);
+// // //adds new entries as a new object to the array in the .json file
+//   response.cookie('pageVisits', pageVisits + 1, { maxAge: secondsToExpire })
+// //   let views = response.cookie('pageVisits', pageVisits + 1)
+// //   data.push(views);
+// // //this converts the .json file into string name/value pairs
+// //   fs.writeFileSync('cookies_data.json', JSON.stringify(data));
+// //
 //   response.render('index');
 // });
 //
@@ -44,24 +52,24 @@ app.use(bodyParser.urlencoded({ extended: false }))
 
 
 
-//sessions version:
-app.get('/', function (request, response) {
-  //we read cookies from the request
-  let pageViews = request.session.pageViews || 0;
-  request.session.pageViews = pageViews + 1;
-  response.render('index');
-});
-
-app.get('/clear-session',
-function(request, response){
-  request.session.destroy(function(err){
-    if(err){
-      response.send("Error clearing session " + err)
-    }else{
-      response.send("Session Cleared")
-    }
-  })
-})
+// //sessions version:
+// app.get('/', function (request, response) {
+//   //we read cookies from the request
+//   let pageViews = request.session.pageViews || 0;
+//   request.session.pageViews = pageViews + 1;
+//   response.render('index');
+// });
+//
+// app.get('/clear-session',
+// function(request, response){
+//   request.session.destroy(function(err){
+//     if(err){
+//       response.send("Error clearing session " + err)
+//     }else{
+//       response.send("Session Cleared")
+//     }
+//   })
+// })
 
 
 //this posts the form data to the team update page
