@@ -1,65 +1,41 @@
-<html>
-  <head>
+<form id='demo-form' action='/team-update' method="post">
+  <label>
+    Team Name:
+    <input type="text" name="teamName" placeholder="Enter Team Name">
+  </label>
 
-    <title>New Team</title>
-    <style>
-      body {
-        background-image: url(https://media.giphy.com/media/l0MYMj4ABaEXBiuty/giphy.gif);
-        background-repeat: no-repeat;
-        background-size: cover;
-        color: white;
-        text-shadow: 2px 2px black;
-      }
+  <br>
+  <br>
 
+  <label>
+    Coach Name:
+    <input type="text" name="coach" placeholder="Enter Coach Name">
+  </label>
+  <br>
+  <br>
+  <label>
+    Franchise Player:
+    <input type='radio' name='player' value='Ronaldo' />
+    Ronaldo
 
-    </style>
-  </head>
-  <body>
-    <h1>Create Your Own Sports Team</h1>
-    <br>
+    <input type='radio' name='player' value='Messi' />
+    Messi
 
-    <form id='demo-form' action='/team-update' method="post">
-      <label>
-      Team Name:
-        <input type="text" name="teamName" placeholder="Enter Team Name">
-      </label>
+    <input type='radio' name='player' value='Neymar' />
+    Neymar
+  </label>
+  <br>
+  <label>
+    Star Players:
+    <input type='radio' name='player1' value='Suarez' />
+    Suarez
 
-      <br>
-      <br>
+    <input type='radio' name='player1' value='Neuer' />
+    Neuer
 
-      <label>
-        Coach Name:
-        <input type="text" name="coach" placeholder="Enter Coach Name">
-        </label>
-        <br>
-        <br>
-      <label>
-        Franchise Player:
-        <input type='radio' name='player' value='Ronaldo' />
-        Ronaldo
-
-        <input type='radio' name='player' value='Messi' />
-        Messi
-
-        <input type='radio' name='player' value='Neymar' />
-        Neymar
-      </label>
-      <br>
-      <label>
-        Star Players:
-        <input type='radio' name='player1' value='Suarez' />
-        Suarez
-
-        <input type='radio' name='player1' value='Neuer' />
-        Neuer
-
-        <input type='radio' name='player1' value='Bale' />
-        Bale
-      </label>
-      <br>
-      <input type='submit' value='Submit' />
-    </form>
-
-
-  </body>
-</html>
+    <input type='radio' name='player1' value='Bale' />
+    Bale
+  </label>
+  <br>
+  <button type="submit" class="btn btn-default" value='Submit'>Submit</button>
+</form>

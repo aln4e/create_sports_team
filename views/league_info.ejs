@@ -1,20 +1,15 @@
-<html>
-  <head>
-  </head>
-  <body>
-    <h1>Thanks for the input!</h1>
-    <% for(var key in responses){ %>
-    Your team name is: <%= responses[key].teamName %>
-    <br />
-    Your coach name is: <%= responses[key].coach %>
-    <br />
-    Your players are: <%= responses[key].player %>
-    <br>
-    Your players are: <%= responses[key].player1 %>
-    <br>
-    <p> ------------- </p>
-    <% } %>
-    <br>
-    <a href='/'> Create new team</a>
-  </body>
-</html>
+<% for(var key in responses){ %>
+  Your team name is: <%= responses[key].teamName %>
+  <br />
+  Your coach name is: <%= responses[key].coach %>
+  <br />
+  Your players are: <%= responses[key].player %>
+  <br>
+  Your players are: <%= responses[key].player1 %>
+  <br>
+  <p> ------------- </p>
+  <% } %>
+  <br>
+  <a href='/'>
+    <button type="button" class="btn btn-default">Create New Team</button>
+  </a>

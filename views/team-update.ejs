@@ -1,27 +1,16 @@
-<html>
-  <head>
-  </head>
-  <body>
-    <h1>Thanks for the input!</h1>
-<br>
-    <% for(var i= responses.length-1 ; i < responses.length; i++){ %>
-<br>
-    Your team name is: <%= responses[responses.length-1].teamName %>
-    <br>
-    Your coach name is: <%= responses[responses.length-1].coach %>
-    <br>
-      Your player is: <%= responses[responses.length-1].player %>
-      <br>
-      Your 2nd player is: <%= responses[responses.length-1].player1 %>
-      <br>
-      <p> ------------- </p>
-    <% } %>
-    <br>
-    <a href="/"> Pick different players</a>
-    <br>
-    <a href='/'> Create new team</a>
-    <br>
-    <a href="/league_info">View League Info</a>
-
-  </body>
-</html>
+<% for(var i= allTeams.length-1 ; i < allTeams.length; i++){ %>
+  <br>
+  Your team name is: <%= allTeams[allTeams.length-1].teamName %>
+  <br>
+  Your coach name is: <%= allTeams[allTeams.length-1].coach %>
+  <br>
+  Your player is: <%= allTeams[allTeams.length-1].player %>
+  <br>
+  Your 2nd player is: <%= allTeams[allTeams.length-1].player1 %>
+  <br>
+  <p> ------------- </p>
+  <% } %>
+  <br>
+  <a href='/'>
+    <button type="button" class="btn btn-default">Create New Team</button>
+  </a>
